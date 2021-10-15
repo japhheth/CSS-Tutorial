@@ -1,0 +1,84 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.wrapper {
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.inner-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-gap: 10px;
+    grid-template-areas: 
+    "hea hea hea sidebar"
+    "side . sider ."
+    ". sidder siderr .";
+}
+
+.a {
+    background-color: green;
+    grid-area: hea;
+    height: 200px;
+}
+
+.b {
+    background-color: yellow;
+    grid-area: sidebar;
+    height: 200px;
+}
+
+.c {
+    background-color: red;
+    grid-area: side;
+    height: 200px;
+}
+.d {
+    background-color: purple;
+    grid-area: sider;
+    height: 200px;
+}
+.e{
+    background-color: black;
+    grid-area: siderr;
+    height: 200px;
+}
+.f{
+    background-color: brown;
+    grid-area: sidder;
+    height: 200px;
+}
+
+/*  
+    Laptop: 1024px =====> 4k
+    Tab: 768px => 1023px;
+    Mobile devices: 320px => 767px;
+*/
+
+@media screen and (max-width: 767px){
+    .inner-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+        "hea hea"
+        "sidebar side "
+        "sider sidder"
+        ". siderr";
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .inner-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas: 
+        "hea hea hea"
+        "sidebar side ."
+        "sider sidder ."
+        ". siderr .";
+    }
+}
